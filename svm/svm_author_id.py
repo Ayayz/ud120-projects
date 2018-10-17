@@ -24,7 +24,18 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
+from sklearn.svm import SVC
+clf=SVC(kernal='Linear')
+clf.fit(feature_train,lables_train)
+pred=clf.predict(feature_test)
 
+
+preetyPicture(clf,feature_test,lables_test)
+plt.show()
+
+from sklearn.metrics import accuracy_score
+acc= accuracy_score(pred,lables_test)
+print acc
 #########################################################
 
 
